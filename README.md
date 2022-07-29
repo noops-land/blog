@@ -1,1 +1,1 @@
-# noOps.land blog
+# noOps.land notes
