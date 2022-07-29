@@ -1,7 +1,7 @@
 import blog, { ga, redirects } from "https://deno.land/x/blog@0.4.2/blog.tsx";
 
 blog({
-  title: "noOps blog",
+  title: "noOps notes",
   author: "noOps.land",
   lang: "fr",
   dateStyle: "long",
