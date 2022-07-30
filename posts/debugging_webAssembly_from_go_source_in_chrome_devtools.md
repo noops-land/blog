@@ -1,7 +1,6 @@
 ---
-title: WebAssembly and WASI with Go
+title: Debugging WebAssembly from Go source in Chrome DevTools
 publish_date: 2022-07-29
 #tags: wasm, go, golang, wasi, compiler, debugger
 ---
 
-.
