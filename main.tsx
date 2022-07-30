@@ -1,16 +1,21 @@
 /** @jsx h */
 
 import blog, { h } from "https://deno.land/x/blog@0.4.2/blog.tsx";
+import { serveFile } from "https://deno.land/std@0.149.0/http/file_server.ts";
 
-blog({
+const metadata = {
   title: "noops notes",
   author: "noops.land",
   lang: "en",
   dateStyle: "long",
   icon: null,
+}
+
+blog({
+  ...metadata,
   header: <header class="w-full h-30 lt-sm:h-80 bg-cover bg-center bg-no-repeat">
     <div class="max-w-screen-sm h-full px-6 mx-auto flex flex-col items-center justify-center">
-      <h1 class="mt-3 text-4xl text-gray-900 dark:text-gray-100 font-bold">noops notes
+      <h1 class="mt-3 text-4xl text-gray-900 dark:text-gray-100 font-bold">{ metadata.title }
       </h1>
     </div>
   </header>,
@@ -30,7 +35,8 @@ blog({
         </svg> RSS
       </a>
     </p>
-  </footer>
+  </footer>,
+  middlewares: [serveCustomFile()]
   // middlewares: [
 
   // If you want to set up Google Analytics, paste your GA key here.
@@ -44,3 +50,26 @@ blog({
 
   // ]
 });
+
+// To enable browser caching, we have to give a last-modified date to static files
+// since Deno.stat does not provide modification time, access time, or creation time
+// https://deno.com/deploy/docs/runtime-fs#denostat
+
+// TODO get the date from an ENV or deployment var
+function serveCustomFile() {
+  return async function (req: Request, ctx): Promise<Response> {
+    const { pathname } = new URL(req.url);
+    if (pathname === "/fonts/fontello/css/cc-fontello.css"
+      || pathname === "/fonts/fontello/font/cc-fontello.woff2"
+    ) {
+      let fsRoot = ctx.state.directory
+      const fileResponse: Promise<Response> = serveFile(req, fsRoot + pathname)
+      fileResponse.then(response => {
+        response.headers.set("last-modified", "Sat, 30 Jul 2022 18:43:40 GMT")
+        response.headers.set("Cache-Control", "public, max-age=86400, immutable")
+      })
+      return fileResponse
+    }
+    return await ctx.next();
+  };
+}
