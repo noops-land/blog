@@ -1,1 +1,1 @@
-# noops.land notes
+# noops.land blog
