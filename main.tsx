@@ -2,8 +2,7 @@
 
 import blog, { h } from "https://deno.land/x/blog@0.4.2/blog.tsx";
 import { serveDir } from "https://deno.land/std@0.149.0/http/file_server.ts";
-import { config as dotEnvConfig } from 'https://deno.land/x/dotenv@v3.2.0/mod.ts';
-dotEnvConfig({ export: true })
+import 'https://deno.land/std@0.150.0/dotenv/load.ts';
 
 const metadata = {
   title: "noops notes",
