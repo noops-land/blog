@@ -41,6 +41,7 @@
 
 .cc-icon-cc:before {
     content: '\e804';
+    margin-left: 0px;
 }
 
 .cc-icon-search:before {
@@ -52,7 +53,8 @@
 }
 
 .cc-icon-cc-by:before {
-    content: '\e807'
+    content: '\e807';
+    margin-right: .4em
 }
 
 .cc-icon-down-dir:before {
