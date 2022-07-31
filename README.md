@@ -1,1 +1,1 @@
-# noOps.land notes
+# noops.land notes
