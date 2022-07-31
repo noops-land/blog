@@ -2,6 +2,9 @@
 
 import blog, { h } from "https://deno.land/x/blog@0.4.2/blog.tsx";
 import { serveDir } from "https://deno.land/std@0.149.0/http/file_server.ts";
+
+// Needed to get .env variables when testing locally
+// Degrades gracefully on Deno Deploy with a warning
 import 'https://deno.land/std@0.150.0/dotenv/load.ts';
 
 const metadata = {
@@ -52,11 +55,13 @@ blog({
   // ]
 });
 
-// To enable browser caching, we have to give a last-modified date to static files
+// To enable browser caching, we have to give an ETag to static files
 // since Deno.stat does not provide modification time, access time, or creation time
 // https://deno.com/deploy/docs/runtime-fs#denostat
-
-// TODO get the date from deployment
+//
+// We use the DENO_DEPLOYMENT_ID environment variable for the ETag value
+// which is provided by Deno Deploy
+// https://deno.com/deploy/docs/projects#environment-variables
 function serveStaticDir() {
   return async function (req: Request, ctx): Promise<Response> {
     const { pathname } = new URL(req.url);
