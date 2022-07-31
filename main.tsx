@@ -60,9 +60,11 @@ blog({
 function serveStaticDir() {
   return async function (req: Request, ctx): Promise<Response> {
     const { pathname } = new URL(req.url);
-    console.debug(Deno.env.toObject())
     if (pathname.startsWith("/static/")
     ) {
+      if ( req?.headers?.get("if-none-match")?.includes(Deno.env.get("DENO_DEPLOYMENT_ID")) ) {
+        return new Response(null, { status: 304 })
+      }
       let fsRoot = ctx.state.directory
       const fileResponse: Promise<Response> = serveDir(req, {
         fsRoot,
@@ -70,7 +72,7 @@ function serveStaticDir() {
         quiet: true
       })
       fileResponse.then(response => {
-        response.headers.set("last-modified", Deno.env.get("LAST_MODIFIED"))
+        response.headers.set("ETag", Deno.env.get("DENO_DEPLOYMENT_ID"))
         response.headers.set("Cache-Control", "public, max-age=86400, immutable")
       })
       return fileResponse
