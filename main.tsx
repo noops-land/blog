@@ -60,6 +60,7 @@ blog({
 function serveStaticDir() {
   return async function (req: Request, ctx): Promise<Response> {
     const { pathname } = new URL(req.url);
+    console.debug(Deno.env.toObject())
     if (pathname.startsWith("/static/")
     ) {
       let fsRoot = ctx.state.directory
