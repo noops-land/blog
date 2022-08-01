@@ -2,10 +2,12 @@
 title: Debugging WebAssembly from Go sources in Chrome DevTools
 publish_date: 2022-07-31
 tags: ["wasm", "go", "golang", "wasi", "compiler", "debugger", "devtools", "chrome"]
-description: An interactive debugger is useful to better understand the behavior of an application or service by stepping through its code. WebAssembly (Wasm) executables compiled from Go source code can be interactively debugged in Chrome DevTools
+description: WebAssembly (Wasm) executables compiled from Go source code can be interactively debugged in Chrome DevTools
 ---
 
-An interactive debugger is useful to better understand the behavior of an application or service by stepping through its code. WebAssembly (Wasm) executables compiled from Go source code can be interactively debugged in Chrome DevTools, as shown in the following screenshot:
+An interactive debugger is useful to better understand the behavior of an application or service by stepping through its code
+
+WebAssembly (Wasm) executables compiled from Go source code can be interactively debugged in Chrome DevTools, as shown in the following screenshot:
 
 ![Breakpoint of a Go source file in Chrome DevTools ](../static/img/devtools-breakpoint.png)
 
@@ -98,7 +100,7 @@ Invoke the `multiply` function from the DevTools console:
 A helper extension that integrates with Chrome DevTools is needed.<br>
 Please install it by going to this link: <https://goo.gle/wasm-debugging-extension>. Although its current name suggests otherwise, **the extension will work with Go sources**
 
-Finally, enable WebAssembly debugging in the DevTools Experiments. Open Chrome DevTools, click the gear (⚙) icon in the top right corner of DevTools pane, go to the Experiments panel and tick `:
+Finally, enable WebAssembly debugging in the DevTools Experiments. Open Chrome DevTools, click the gear (⚙) icon in the top right corner of DevTools pane, go to the Experiments panel and tick `WebAssembly Debugging: Enable DWARF support`:
 
 ![WebAssembly Debugging: Enable DWARF support](../static/img/devtools-dwarf-support.png)
 
