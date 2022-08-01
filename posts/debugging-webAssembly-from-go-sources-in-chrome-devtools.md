@@ -1,6 +1,6 @@
 ---
 title: Debugging WebAssembly from Go sources in Chrome DevTools
-publish_date: 2022-07-31
+publish_date: 2022-08-01
 tags: ["wasm", "go", "golang", "wasi", "compiler", "debugger", "devtools", "chrome"]
 description: WebAssembly (Wasm) executables compiled from Go source code can be interactively debugged in Chrome DevTools
 ---
