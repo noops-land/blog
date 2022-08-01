@@ -107,7 +107,7 @@ Finally, enable WebAssembly debugging in the DevTools Experiments. Open Chrome D
 
 Make sure main.wasm is running in Chrome, [as explained earlier](#run-mainwasm-in-chrome)
 
-In Chrome DevTools, open the `Sources` tab. In the `Pages` panel, open main.go from the `file://` tree. Add a breakpoint on the `fmt.Println("Go Web Assembly")` line:
+In Chrome DevTools, open the `Sources` tab. In the `Page` panel, open main.go from the `file://` tree. Add a breakpoint on the `fmt.Println("Go Web Assembly")` line:
 
 ![Add breakpoint to `fmt.Println("Go Web Assembly")` line](../static/img/devtools-add-breakpoint.png)
 
