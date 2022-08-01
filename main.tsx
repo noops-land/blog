@@ -11,6 +11,10 @@ import { serveDir } from "https://deno.land/std@0.149.0/http/file_server.ts";
 // Degrades gracefully on Deno Deploy with a warning
 import "https://deno.land/std@0.150.0/dotenv/load.ts";
 
+// add supplemental syntax highlighting
+import "https://esm.sh/prismjs@1.22.0/components/prism-bash?no-check";
+import "https://esm.sh/prismjs@1.22.0/components/prism-go?no-check";
+
 const metadata = {
   title: "noops blog",
   author: "noops.land",
