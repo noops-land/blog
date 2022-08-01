@@ -117,6 +117,10 @@ Reload the page. The debugger should be paused on the `fmt.Println("Go Web Assem
 
 🚀
 
+## Limitations
+
+- [Which Go language features are supported by TinyGo and which are still a work in progress](https://tinygo.org/docs/reference/lang-support/)
+
 ## References
 
 - [TinyGo: Using WebAssembly](https://tinygo.org/docs/guides/webassembly)
