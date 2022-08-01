@@ -97,8 +97,7 @@ Invoke the `multiply` function from the DevTools console:
 
 ## Enable Go debugging in Chrome DevTools
 
-A helper extension that integrates with Chrome DevTools is needed.<br>
-Please install it by going to this link: <https://goo.gle/wasm-debugging-extension>. Although its current name suggests otherwise, **the extension will work with Go sources**
+A helper extension that integrates with Chrome DevTools is needed. Please install it by going to [this link](https://goo.gle/wasm-debugging-extension). Although its current name suggests otherwise, **the extension will work with Go sources**
 
 Finally, enable WebAssembly debugging in the DevTools Experiments. Open Chrome DevTools, click the gear (⚙) icon in the top right corner of DevTools pane, go to the Experiments panel and tick `WebAssembly Debugging: Enable DWARF support`:
 
@@ -122,4 +121,4 @@ Reload the page. The debugger should be paused on the `fmt.Println("Go Web Assem
 
 - [TinyGo: Using WebAssembly](https://tinygo.org/docs/guides/webassembly)
 - [Chrome DevTools engineering blog: Debugging WebAssembly with modern tools](https://developer.chrome.com/blog/wasm-debugging-2020/)
-- [golang/go GitHub issue #33503 : wasm: add DWARF sections](https://github.com/golang/go/issues/33503)
+- [golang/go GitHub issue #33503: wasm: add DWARF sections](https://github.com/golang/go/issues/33503)
