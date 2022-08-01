@@ -11,9 +11,9 @@ WebAssembly (Wasm) executables compiled from Go source code can be interactively
 
 ![Breakpoint of a Go source file in Chrome DevTools ](../static/img/devtools-breakpoint.png)
 
-Currently, the builtin Go compiler does not export [the debugging information needed by the Chrome debugger](https://yurydelendik.github.io/webassembly-dwarf/). The remainder fix to enable this functionality is described in [this changelog](https://go.googlesource.com/go/+/418ef9ce78ffe2c27341dacb6cbe88bc1787b797)
+Currently, the built-in Go compiler does not export [the debugging information needed by the Chrome debugger](https://yurydelendik.github.io/webassembly-dwarf/). The remainder fix to enable this functionality is described in [this changelog](https://go.googlesource.com/go/+/418ef9ce78ffe2c27341dacb6cbe88bc1787b797)
 
-[TinyGo](https://tinygo.org) is an alternative compiler targeting the embedded and WebAssembly space. Contrary to the builtin Go compiler, **WebAssemblies from TinyGo can be debugged in Chrome DevTools**
+[TinyGo](https://tinygo.org) is an alternative compiler targeting the embedded and WebAssembly space. Contrary to the built-in Go compiler, **WebAssemblies from TinyGo can be debugged in Chrome DevTools**
 
 ## Compiling Go source to WebAssembly in TinyGo
 
