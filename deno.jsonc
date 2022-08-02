@@ -1,6 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --allow-net --allow-read --allow-env --watch main.tsx --dev",
+    "debug": "deno run --allow-net --allow-read --allow-env --inspect main.tsx --dev",
     "serve": "deno run --allow-net --allow-read --allow-env --no-check main.tsx",
   }
 }
