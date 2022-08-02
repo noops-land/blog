@@ -28,10 +28,9 @@ const metadata = {
   favicon: undefined,
 };
 
-const oCall = PostPage.call;
 
-PostPage.call = function (thisArgs, ...args) {
-  return _PostPage(...args);
+PostPage.call = function<T, _A, R>(_thisArgs: T, ...args: PostPageProps[]) {
+  return _PostPage(args[0]) as unknown as R
 };
 
 function _PostPage({ post, state }: PostPageProps) {
