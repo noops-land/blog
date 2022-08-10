@@ -59,7 +59,7 @@ function _PostPage({ post, state }: PostPageProps) {
           </a>
           <a
             title="Edit or file an issue"
-            href={ `https://github.com/noops-land/blog/tree/main/posts${post.pathname}.md` }
+            href={ `https://github.com/noops-land/blog/edit/main/posts${post.pathname}.md` }
             class="pl-3 inline-flex items-center gap-1 text-sm text-gray-500/80 hover:text-gray-700 transition-colors"
           >
             <svg
